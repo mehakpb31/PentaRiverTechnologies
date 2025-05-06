@@ -410,3 +410,40 @@ window.addEventListener('load', function() {
         initPayment();
     }
 });
+
+
+
+// Interactive Technician Section Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const hotspots = document.querySelectorAll('.interactive-tech-section .hotspot');
+    const infoBox = document.getElementById('info-box');
+    const infoText = document.getElementById('info-text');
+    const closeInfoButton = document.getElementById('close-info');
+
+    if (hotspots.length > 0 && infoBox && infoText && closeInfoButton) {
+        hotspots.forEach(hotspot => {
+            hotspot.addEventListener('click', () => {
+                const info = hotspot.getAttribute('data-info');
+                if (info) {
+                    infoText.textContent = info;
+                    infoBox.classList.add('visible');
+                }
+            });
+        });
+
+        closeInfoButton.addEventListener('click', () => {
+            infoBox.classList.remove('visible');
+        });
+
+        // Optional: Close info box if clicked outside
+        document.addEventListener('click', (event) => {
+            // Check if the click is outside the infoBox and not on a hotspot
+            if (!infoBox.contains(event.target) && ![...hotspots].some(h => h.contains(event.target))) {
+                if (infoBox.classList.contains('visible')) {
+                    infoBox.classList.remove('visible');
+                }
+            }
+        });
+    }
+});
+

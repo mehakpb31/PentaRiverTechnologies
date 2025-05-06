@@ -338,7 +338,7 @@ p {
 .btn {
     display: inline-block;
     padding: .75rem 1.5rem;
-    border-radius: 4px;
+    border-radius: 25px; /* Rounded corners */
     font-family: var(--font-primary);
     font-weight: 600;
     text-align: center;
@@ -690,3 +690,254 @@ p {
         max-width: 100%;
     }
 }
+
+
+/* Interactive Technician Section Styles */
+.interactive-tech-section {
+    background-image: url('../images/technician_install_bg.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* Optional: Creates a parallax effect */
+    padding: 80px 0;
+    position: relative;
+    color: #ffffff; /* Default text color for the section */
+}
+
+.interactive-tech-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 33, 71, 0.6); /* Dark blue overlay similar to header/footer */
+    z-index: 1;
+}
+
+.interactive-tech-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.interactive-tech-section .section-header h2,
+.interactive-tech-section .section-header p,
+.interactive-tech-section .interactive-content p {
+    color: #ffffff; /* Ensure text is white */
+}
+
+.interactive-content {
+    margin-top: 40px;
+    /* Styles for interactive elements (hotspots, info boxes) will be added later */
+}
+
+
+
+/* Hotspot and Info Box Styles */
+.interactive-content {
+    position: relative; /* Needed for absolute positioning of hotspots */
+    min-height: 400px; /* Adjust as needed based on background image aspect ratio */
+}
+
+.hotspot {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid #007bff; /* Primary blue color */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 10;
+}
+
+.hotspot:hover {
+    transform: scale(1.2);
+    background-color: #007bff;
+}
+
+.hotspot::after {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.hotspot:hover::after {
+    color: #ffffff;
+}
+
+#info-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background-color: rgba(0, 33, 71, 0.9); /* Dark blue, slightly transparent */
+    color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 350px;
+    width: 90%;
+    z-index: 20;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+#info-box.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#info-box p {
+    margin: 0 0 15px 0;
+    line-height: 1.6;
+    color: #ffffff; /* Ensure text is white */
+}
+
+#close-info {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1;
+}
+
+#close-info:hover {
+    color: #cccccc;
+}
+
+/* Responsive adjustments if needed */
+@media (max-width: 768px) {
+    .interactive-content {
+        min-height: 300px;
+    }
+    #info-box {
+        max-width: 90%;
+    }
+}
+
+
+
+/* Serving Area & Contact Section Styles */
+.serving-contact {
+    padding: 4rem 0;
+}
+
+.serving-contact .row {
+    gap: 2rem 0; /* Add gap between rows on smaller screens */
+}
+
+.serving-content h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.serving-content p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.area-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.area-list li {
+    background-color: #e9ecef; /* Light grey background */
+    color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 20px; /* Pill shape */
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    cursor: default; /* Indicate non-clickable, but interactive */
+    display: flex;
+    align-items: center;
+}
+
+.area-list li i {
+    margin-right: 8px;
+    color: var(--secondary-color); /* Use accent color for icon */
+}
+
+.area-list.interactive-areas li:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    transform: translateY(-3px);
+}
+
+.area-list.interactive-areas li:hover i {
+    color: var(--text-light);
+}
+
+.contact-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap */
+    gap: 15px; /* Space between buttons */
+}
+
+.contact-buttons .btn {
+    flex-grow: 1; /* Allow buttons to grow */
+    min-width: 150px; /* Minimum width before wrapping */
+    display: flex; /* Align icon and text */
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-buttons .btn i {
+    margin-right: 8px;
+}
+
+.image-column img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Responsive adjustments for Serving Area section */
+@media (max-width: 992px) {
+    .serving-content {
+        text-align: center;
+    }
+    .area-list {
+        justify-content: center;
+    }
+    .contact-buttons {
+        justify-content: center;
+    }
+    .image-column {
+        margin-top: 2rem; /* Add space above image when stacked */
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-buttons .btn {
+        width: 100%; /* Make buttons full width on small screens */
+        margin-bottom: 10px; /* Add space between stacked buttons */
+    }
+    .contact-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center;
+    }
+    .area-list li {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+}
+
