@@ -941,3 +941,333 @@ p {
     }
 }
 
+
+
+/* Enhanced Mobile Responsiveness for Starlink and All Services */
+
+/* Extra Small Devices (320px and up) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+    }
+    
+    h4 {
+        font-size: 1.1rem;
+    }
+    
+    p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .section {
+        padding: 2rem 0;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    /* Service cards mobile optimization */
+    .service-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .service-card .icon {
+        font-size: 2.5rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    /* Button mobile optimization */
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .btn-lg {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    /* Service flex layout mobile */
+    .service-flex {
+        flex-direction: column;
+    }
+    
+    .service-content {
+        margin-bottom: 2rem;
+    }
+    
+    .service-list li {
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    /* Image container mobile */
+    .service-image-container {
+        margin-top: 1.5rem;
+    }
+    
+    .service-image-container img {
+        margin-bottom: 1rem;
+    }
+    
+    /* Hero section mobile */
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+    }
+    
+    /* Footer mobile */
+    .footer {
+        padding: 2rem 0;
+    }
+    
+    .footer-about,
+    .footer-links,
+    .footer-contact {
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .footer-links li,
+    .footer-contact li {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Navigation mobile */
+    .nav-list {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .nav-link {
+        padding: 0.75rem 1rem;
+        font-size: 0.95rem;
+    }
+    
+    /* CTA section mobile */
+    .cta {
+        padding: 2rem 1rem;
+    }
+    
+    .cta h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .cta p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+    }
+    
+    /* Form mobile optimization */
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-group label {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+    
+    /* Page header mobile */
+    .page-header {
+        padding: 2rem 0;
+    }
+    
+    .page-header h1 {
+        font-size: 1.75rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .page-header p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Small Devices (481px to 768px) */
+@media (max-width: 768px) and (min-width: 481px) {
+    h1 {
+        font-size: 2.25rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    .section {
+        padding: 2.5rem 0;
+    }
+    
+    .service-card {
+        padding: 1.75rem 1.25rem;
+    }
+    
+    .service-flex {
+        flex-direction: column;
+    }
+    
+    .service-content {
+        margin-bottom: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+    }
+}
+
+/* Touch-friendly elements for mobile */
+@media (hover: none) and (pointer: coarse) {
+    /* Increase touch target sizes */
+    .btn,
+    a,
+    button {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 0.75rem 1.5rem;
+    }
+    
+    .nav-link {
+        padding: 1rem 1.25rem;
+    }
+    
+    .service-card {
+        cursor: pointer;
+    }
+    
+    /* Remove hover effects on touch devices */
+    .btn:hover,
+    .service-card:hover {
+        transform: none;
+    }
+}
+
+/* Landscape mobile optimization */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        padding: 2rem 0;
+    }
+    
+    .hero-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+    
+    .section {
+        padding: 1.5rem 0;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Tablet optimization (768px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .service-flex {
+        flex-direction: column;
+    }
+    
+    .service-content {
+        margin-bottom: 2rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Improved readability on all mobile devices */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Prevent zoom on input focus */
+    }
+    
+    input,
+    textarea,
+    select {
+        font-size: 16px; /* Prevent zoom on input focus */
+    }
+    
+    /* Ensure proper spacing for touch */
+    .service-list li {
+        padding: 0.75rem 0;
+        line-height: 1.6;
+    }
+    
+    /* Better spacing for readability */
+    p {
+        margin-bottom: 1.25rem;
+    }
+    
+    /* Improve link visibility */
+    a {
+        word-break: break-word;
+    }
+}
