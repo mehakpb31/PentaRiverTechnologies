@@ -1,0 +1,507 @@
+/* 3-Way Slider Styles */
+.trimlight-3way-slider-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.trimlight-3way-slider {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slider-images {
+    position: relative;
+    width: 100%;
+    padding-bottom: 66.66%;
+    /* Aspect ratio 3:2 */
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    background-color: #000;
+    cursor: col-resize;
+    /* Indicate draggable */
+}
+
+.slider-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.05s linear;
+    /* Faster transition for responsiveness */
+    pointer-events: none;
+    /* Let clicks pass through to slider */
+}
+
+.slider-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-label {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity 0.3s;
+}
+
+.image-before {
+    z-index: 1;
+}
+
+.image-white {
+    z-index: 2;
+    opacity: 0.5;
+}
+
+.image-rgb {
+    z-index: 3;
+    opacity: 0;
+}
+
+/* Overlay Controls */
+.slider-overlay-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+}
+
+.slider-control-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    /* Invisible but interactive */
+    cursor: col-resize;
+    margin: 0;
+    z-index: 22;
+}
+
+/* Custom Handle */
+.slider-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    /* Initial position */
+    width: 40px;
+    /* Width of the touch target area */
+    transform: translateX(-50%);
+    pointer-events: none;
+    /* Let input receive events */
+    z-index: 21;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.handle-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.handle-arrows {
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    color: #333;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+    /* To sit on top of line */
+}
+
+/* Bottom Labels */
+.slider-labels-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    color: #555;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0 10px;
+}
+
+.label-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 4-Way Slider Specifics */
+.image-before-2 {
+    z-index: 1;
+}
+
+.image-white-2 {
+    z-index: 2;
+    opacity: 0;
+}
+
+.image-rgb1-2 {
+    z-index: 3;
+    opacity: 0;
+}
+
+.image-rgb2-2 {
+    z-index: 4;
+    opacity: 0;
+}
+
+/* Slider Card Styles */
+.slider-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.slider-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.slider-card h3 {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Enhanced Hero Styles */
+.trimlight-hero {
+    position: relative;
+    height: 100vh;
+    /* Full screen */
+    min-height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-slide {
+    /* Ensure image covers everything */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Premium Overlay */
+/* .hero-overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%);
+    z-index: 2;
+} */
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: #fff;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    letter-spacing: -1px;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    opacity: 0.9;
+}
+
+/* Button Polish */
+.hero-buttons .btn {
+    padding: 15px 35px;
+    font-weight: 600;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.hero-buttons .btn-primary {
+    background-color: #e65100;
+    /* Halloween Orange accent from image */
+    border-color: #e65100;
+    box-shadow: 0 5px 15px rgba(230, 81, 0, 0.4);
+}
+
+.hero-buttons .btn-primary:hover {
+    background-color: #ff6d00;
+    border-color: #ff6d00;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(230, 81, 0, 0.6);
+}
+
+.hero-buttons .btn-outline {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid #fff;
+    color: #fff;
+    backdrop-filter: blur(5px);
+}
+
+.hero-buttons .btn-outline:hover {
+    background-color: #fff;
+    color: #333;
+    transform: translateY(-3px);
+}
+
+/* Enforce Symmetry and Size */
+.trimlight-3way-slider .slider-images {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 66.66%;
+    /* 3:2 Aspect Ratio */
+    overflow: hidden;
+    border-radius: 10px;
+    background: #f0f0f0;
+    /* Placeholder color */
+}
+
+.trimlight-3way-slider .slider-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.trimlight-3way-slider .slider-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensure image fills  */
+    display: block;
+}
+
+/* Ensure cards match height */
+.slider-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.trimlight-3way-slider {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fix Hero Slider Layout */
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-size: cover;
+    background-position: top center;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+
+    /* Global Spacing */
+    .trimlight-3way-slider-section,
+    .trimlight-features,
+    .gallery-section,
+    .video-section,
+    .section {
+        padding: 50px 0;
+    }
+
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    /* 3-Way Slider Touch Optimization */
+    .slider-handle {
+        width: 60px;
+        /* Larger touch target */
+    }
+
+    .handle-arrows {
+        width: 50px;
+        height: 50px;
+    }
+
+    .slider-labels-bottom {
+        font-size: 0.8rem;
+    }
+
+    /* Features Grid */
+    .feature-card {
+        margin-bottom: 20px;
+    }
+
+    /* CTA Section */
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+        margin: 0 !important;
+        /* Override any inline margins */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Transparent Header for Trimlight Page */
+.header.transparent-header {
+    background-color: transparent;
+    box-shadow: none;
+    position: absolute;
+    /* Overlay on top of hero */
+}
+
+.header.transparent-header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    /* Stick to top on scroll */
+}
+
+/* Ensure nav links are visible on dark hero */
+.header.transparent-header .nav-link {
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.header.transparent-header.scrolled .nav-link {
+    color: var(--primary-color, #2c3e50);
+    text-shadow: none;
+}
+
+/* Adjust logo visibility if needed (assuming logo works on dark bg) */
+/* If logo needs to change, we might need JS or CSS filters */
+/* Header Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-divider {
+    width: 1px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.header.transparent-header.scrolled .logo-divider {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.trimlight-logo {
+    height: 50px; /* Match Penta logo height */
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* White logo for transparent header */
+}
+
+.header.transparent-header.scrolled .trimlight-logo {
+    filter: none; /* Original colors for white header */
+}
+
+/* Mobile Logo Adjustment */
+@media (max-width: 480px) {
+    .logo {
+        gap: 10px;
+    }
+    
+    .logo img {
+        height: 35px; /* Smaller on mobile */
+    }
+    
+    .trimlight-logo {
+        height: 35px;
+    }
+    
+    .logo-divider {
+        height: 30px;
+    }
+}
