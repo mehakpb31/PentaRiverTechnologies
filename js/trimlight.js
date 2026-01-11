@@ -5,6 +5,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     initHeroSlider();
     init3WaySlider();
+    initInteractiveTechHub();
+    initComparisonSlider();
 });
 
 function initHeroSlider() {
@@ -90,4 +92,75 @@ function init3WaySlider() {
 
     // Initialize
     updateSlider();
+}
+
+function initInteractiveTechHub() {
+    const hotspots = document.querySelectorAll('.hotspot');
+    const specCards = document.querySelectorAll('.glass-spec-card');
+
+    hotspots.forEach(hotspot => {
+        hotspot.addEventListener('mouseenter', () => activateCard(hotspot.dataset.target));
+        hotspot.addEventListener('click', () => activateCard(hotspot.dataset.target));
+    });
+
+    function activateCard(targetId) {
+        // Remove active class from all cards
+        specCards.forEach(card => {
+            card.classList.remove('active');
+            card.style.display = 'none'; // Hide others
+        });
+
+        // Show and activate target card
+        const targetCard = document.getElementById(targetId);
+        if (targetCard) {
+            targetCard.style.display = 'block';
+            // Slight delay to allow display:block to apply before adding class for transition
+            setTimeout(() => {
+                targetCard.classList.add('active');
+            }, 10);
+        }
+    }
+}
+
+function initComparisonSlider() {
+    const container = document.querySelector('.comparison-slider-container');
+    const beforeImage = document.querySelector('.comparison-image-wrapper.before');
+    const handle = document.querySelector('.comparison-handle');
+
+    if (!container || !beforeImage || !handle) return;
+
+    let isDragging = false;
+
+    const onMove = (e) => {
+        if (!isDragging) return;
+
+        const containerRect = container.getBoundingClientRect();
+        let x = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+
+        // Calculate position relative to container
+        let position = x - containerRect.left;
+
+        // Clamp position
+        if (position < 0) position = 0;
+        if (position > containerRect.width) position = containerRect.width;
+
+        // Update width of before image and handle position
+        let percentage = (position / containerRect.width) * 100;
+
+        beforeImage.style.width = percentage + '%';
+        handle.style.left = percentage + '%';
+    };
+
+    const onStart = () => { isDragging = true; };
+    const onEnd = () => { isDragging = false; };
+
+    // Mouse events
+    handle.addEventListener('mousedown', onStart);
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onEnd);
+
+    // Touch events
+    handle.addEventListener('touchstart', onStart);
+    document.addEventListener('touchmove', onMove);
+    document.addEventListener('touchend', onEnd);
 }
