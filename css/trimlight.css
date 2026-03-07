@@ -6241,3 +6241,18 @@ body:has(.trimlight-hero) .ft-contact a {
     scroll-margin-top: 0;
 }
 
+/* SEO content – visually hidden, still crawlable (works on any element) */
+.seo-invisible,
+.seo-content.seo-invisible {
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    pointer-events: none !important;
+}
+

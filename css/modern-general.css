@@ -153,7 +153,7 @@
 /* CTA Buttons Container */
 .cta-buttons {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 20px;
 }
 
@@ -567,9 +567,18 @@
 }
 
 .ft-bottom-inner {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: space-between;
+    gap: 1rem;
+}
+
+.ft-bottom-inner > p {
+    justify-self: start;
+}
+
+.ft-bottom-inner .ft-bottom-links {
+    justify-self: end;
 }
 
 .ft-bottom p {
@@ -593,6 +602,58 @@
 .ft-bottom-links a:hover {
     color: #fff;
 }
+/* Developed by Penta logo – footer credit (centered) */
+.ft-developed {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    color: rgba(200, 216, 236, 0.45);
+    white-space: nowrap;
+    justify-self: center;
+}
+
+.ft-developed .ft-dev-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+.ft-developed .ft-dev-logo {
+    height: 22px;
+    width: auto;
+    opacity: 0.85;
+    vertical-align: middle;
+}
+
+.ft-developed .ft-dev-link:hover .ft-dev-logo {
+    opacity: 1;
+}
+
+/* footer-bottom (location/services pages) */
+.footer-bottom .ft-developed {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-bottom .ft-developed .ft-dev-logo {
+    height: 20px;
+}
+
+@media (max-width: 576px) {
+    .ft-bottom-inner {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    .ft-bottom-inner > p,
+    .ft-bottom-inner .ft-bottom-links {
+        justify-self: center;
+    }
+}
+
+
 
 /* ── Compact variant (TV page) ── */
 .footer-v2-compact .ft-body {
