@@ -54,7 +54,7 @@ document.addEventListener('click', function (e) {
 
 // Fallback after load (handles layout shift from images)
 window.addEventListener('load', function () {
-    scrollToTopOnLanding();
+    // scrollToTopOnLanding();
 });
 
 function initTrimlightVideo() {
